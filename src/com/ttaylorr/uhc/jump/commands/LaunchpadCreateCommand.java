@@ -8,7 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 
-import com.ttaylorr.uhc.jump.ReadySetJump;
+import com.ttaylorr.uhc.jump.Jump;
 import com.ttaylorr.uhc.jump.events.LaunchpadCreateEvent;
 import com.ttaylorr.uhc.jump.pad.Launchpad;
 
@@ -35,7 +35,7 @@ public class LaunchpadCreateCommand implements CommandExecutor {
 
 			Launchpad l = new Launchpad(min, max);
 			
-			ReadySetJump.getLaunchpads().add(new Launchpad(min, max));
+			Jump.getLaunchpads().add(new Launchpad(min, max));
 
 			Bukkit.getServer().getPluginManager().callEvent(new LaunchpadCreateEvent(l, sender));
 			

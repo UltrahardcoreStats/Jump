@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-import com.ttaylorr.uhc.jump.ReadySetJump;
+import com.ttaylorr.uhc.jump.Jump;
 import com.ttaylorr.uhc.jump.events.PlayerEnterLaunchpadEvent;
 import com.ttaylorr.uhc.jump.pad.Launchpad;
 
@@ -16,7 +16,7 @@ public class PlayerMoveListener implements Listener {
 	public void onPlayerMove(PlayerMoveEvent event) {
 		Location to = event.getTo();
 		
-		for(Launchpad l : ReadySetJump.getLaunchpads()) {
+		for(Launchpad l : Jump.getLaunchpads()) {
 			if(to.toVector().isInAABB(l.getMin().toVector(), l.getMax().toVector())) {
 				Bukkit.getServer().getPluginManager().callEvent(new PlayerEnterLaunchpadEvent(event.getPlayer(), l));
 			}

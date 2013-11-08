@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.ttaylorr.uhc.jump.pad.Launchpad;
 
-public class ReadySetJump extends JavaPlugin {
+public class Jump extends JavaPlugin {
 
 	private static ArrayList<Launchpad> launchpads = new ArrayList<Launchpad>();
 	

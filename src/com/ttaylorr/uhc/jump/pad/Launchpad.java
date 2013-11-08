@@ -1,12 +1,13 @@
 package com.ttaylorr.uhc.jump.pad;
 
 import org.bukkit.Location;
+import org.bukkit.util.Vector;
 
 public class Launchpad {
 
 	private Location min;
 	private Location max;
-	
+
 	public Launchpad(Location min, Location max) {
 		this.min = min;
 		this.max = max;
