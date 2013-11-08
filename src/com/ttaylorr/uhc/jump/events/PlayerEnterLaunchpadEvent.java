@@ -12,10 +12,18 @@ public class PlayerEnterLaunchpadEvent extends Event {
 	
 	private Player player;
 	private Launchpad launchpad;
+	private boolean isValid;
 	
 	public PlayerEnterLaunchpadEvent(Player player, Launchpad launchpad) {
 		this.player = player;
 		this.launchpad = launchpad;
+		this.isValid = player.hasPermission("launchpad.use");		
+	}
+	
+	public PlayerEnterLaunchpadEvent(Player player, Launchpad launchpad, boolean isValid) {
+		this.player = player;
+		this.launchpad = launchpad;
+		this.isValid = isValid;
 	}
 	
 	public Player getPlayer() {
@@ -24,6 +32,10 @@ public class PlayerEnterLaunchpadEvent extends Event {
 	
 	public Launchpad getLaunchpad() {
 		return this.launchpad;
+	}
+	
+	public boolean getIsValid() {
+		return this.isValid;
 	}
 	
 	public HandlerList getHandlers() {

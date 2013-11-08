@@ -13,9 +13,9 @@ public class LaunchpadCreateEvent extends Event {
 	private CommandSender creator;
 	private Launchpad launchpad;
 	
-	public LaunchpadCreateEvent(CommandSender creator, Launchpad launchpad) {
-		this.creator = creator;
+	public LaunchpadCreateEvent(Launchpad launchpad, CommandSender creator) {
 		this.launchpad = launchpad;
+		this.creator = creator;
 	}
 	
 	public CommandSender getCreator() {
