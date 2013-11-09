@@ -16,7 +16,7 @@ public class LaunchpadCreateCommand implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		if (args.length != 6) {
+		if (args.length != 9) {
 			return false;
 		} else if(sender.hasPermission("launchpad.create") || !(sender instanceof ConsoleCommandSender)) {
 			 return false;
@@ -27,15 +27,19 @@ public class LaunchpadCreateCommand implements CommandExecutor {
 			double x2 = Math.floor(Double.parseDouble(args[3])) + 0.5;
 			double y2 = Math.floor(Double.parseDouble(args[4]));
 			double z2 = Math.floor(Double.parseDouble(args[5])) + 0.5;
+			double x3 = Math.floor(Double.parseDouble(args[6])) + 0.5;
+			double y3 = Math.floor(Double.parseDouble(args[7]));
+			double z3 = Math.floor(Double.parseDouble(args[8])) + 0.5;
 
 			World world = Bukkit.getWorld("");
 
 			Location min = new Location(world, x1, y1, z1);
 			Location max = new Location(world, x2, y2, z2);
+			Location to = new Location(world, x3, y3, z3);
 
-			Launchpad l = new Launchpad(min, max);
+			Launchpad l = new Launchpad(min, max, to);
 			
-			Jump.getLaunchpads().add(new Launchpad(min, max));
+			Jump.getLaunchpads().add(l);
 
 			Bukkit.getServer().getPluginManager().callEvent(new LaunchpadCreateEvent(l, sender));
 			
