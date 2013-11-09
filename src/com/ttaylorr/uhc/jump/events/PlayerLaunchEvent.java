@@ -14,8 +14,11 @@ public class PlayerLaunchEvent extends Event {
 	public PlayerLaunchEvent(Launchpad launchpad, Player player) {
 		this.launchpad = launchpad;
 		this.player = player;
+	
+		player.teleport(launchpad.getTo());
 		
 		launchpad.getContainedPlayers().remove(player);
+	
 	}
 	
 	public Launchpad getLaunchpad() {

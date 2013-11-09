@@ -27,6 +27,10 @@ public class Launchpad {
 		return this.max;
 	}
 	
+	public Location getTo() {
+		return this.to;
+	}
+	
 	protected void setMax(Location l1) {
 		this.max = l1;
 		return;
@@ -34,6 +38,11 @@ public class Launchpad {
 	
 	protected void setMin(Location l1) {
 		this.min = l1;
+		return;
+	}
+	
+	protected void setTo(Location l1) {
+		this.to = l1;
 		return;
 	}
 	
