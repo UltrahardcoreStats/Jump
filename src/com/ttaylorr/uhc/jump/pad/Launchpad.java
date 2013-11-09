@@ -1,16 +1,22 @@
 package com.ttaylorr.uhc.jump.pad;
 
+import java.util.ArrayList;
+
 import org.bukkit.Location;
-import org.bukkit.util.Vector;
+import org.bukkit.entity.Player;
 
 public class Launchpad {
 
 	private Location min;
 	private Location max;
-
-	public Launchpad(Location min, Location max) {
+	private Location to;
+	
+	private ArrayList<Player> containedPlayers = new ArrayList<Player>();
+	
+	public Launchpad(Location min, Location max, Location to) {
 		this.min = min;
 		this.max = max;
+		this.to = to;
 	}
 	
 	public Location getMin() {
@@ -29,6 +35,10 @@ public class Launchpad {
 	protected void setMin(Location l1) {
 		this.min = l1;
 		return;
+	}
+	
+	public ArrayList<Player> getContainedPlayers() {
+		return this.containedPlayers;
 	}
 	
 }

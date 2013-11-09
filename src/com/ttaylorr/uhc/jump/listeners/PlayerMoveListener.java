@@ -18,6 +18,9 @@ public class PlayerMoveListener implements Listener {
 		
 		for(Launchpad l : Jump.getLaunchpads()) {
 			if(to.toVector().isInAABB(l.getMin().toVector(), l.getMax().toVector())) {
+				if(!(l.getContainedPlayers().contains(event.getPlayer()))) {
+					l.getContainedPlayers().add(event.getPlayer());
+				}
 				Bukkit.getServer().getPluginManager().callEvent(new PlayerEnterLaunchpadEvent(event.getPlayer(), l));
 			}
 		}
